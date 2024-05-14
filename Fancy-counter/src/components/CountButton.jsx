@@ -4,8 +4,11 @@ function CountButton({ type, setCount }) {
    const handleClick = () => {
        setCount((prev) => {
         if (type === "minus") {
-          return prev - 1;}
-          else{
+            const newCount = prev - 1;
+          if (newCount < 0) {
+            return 0;
+          } return newCount;
+          } else{
             return prev + 1;
           }
        });
