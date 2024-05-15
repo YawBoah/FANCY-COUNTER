@@ -5,25 +5,29 @@ import ResetButton from "./ResetButton";
 import Title from "./Title";
 
 function Card() {
-    const [count, setCount] = useState(0);
-    const locked = count === 10 ? true : false;
+  const [count, setCount] = useState(0);
+  const locked = count === 10 ? true : false;
 
-    useEffect(() => {
-      window.addEventListener("keydown", (event) => {
-        if (event.code === "Space") {
-          setCount(count + 1);
-        }
-      });
-    }, [])
+  useEffect(() => {
+    const handleKeydown = (event) => {
+      if (event.code === "Space") {
+        setCount(count + 1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      window.addEventListener("keydown", handleKeydown);
+    };
+  }, [count]);
 
   return (
-    <div
-      className={`card ${locked ? "card--limit" : ""}`}
-    >
-      <Title locked={locked}/>
+    <div className={`card ${locked ? "card--limit" : ""}`}>
+      <Title locked={locked} />
       <Count count={count} />
       <ResetButton setCount={setCount} />
-      <ButtonContainer setCount={setCount} locked={locked}/>
+      <ButtonContainer setCount={setCount} locked={locked} />
     </div>
   );
 }
