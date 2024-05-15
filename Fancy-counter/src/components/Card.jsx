@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Count from "./Count";
 import ButtonContainer from "./ButtonContainer";
 import ResetButton from "./ResetButton";
@@ -7,6 +7,14 @@ import Title from "./Title";
 function Card() {
     const [count, setCount] = useState(0);
     const locked = count === 10 ? true : false;
+
+    useEffect(() => {
+      window.addEventListener("keydown", (event) => {
+        if (event.code === "Space") {
+          setCount(count + 1);
+        }
+      });
+    }, [])
 
   return (
     <div
