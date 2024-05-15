@@ -6,15 +6,16 @@ import Title from "./Title";
 
 function Card() {
     const [count, setCount] = useState(0);
+    const locked = count === 10 ? true : false;
+
   return (
     <div
-      className="
-    card"
+      className={`card ${locked ? "card--limit" : ""}`}
     >
-      <Title />
+      <Title locked={locked}/>
       <Count count={count} />
       <ResetButton setCount={setCount} />
-      <ButtonContainer setCount={setCount} />
+      <ButtonContainer setCount={setCount} locked={locked}/>
     </div>
   );
 }
