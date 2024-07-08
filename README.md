@@ -2,6 +2,9 @@
 
 Fancy Counter is a React application that allows users to increment and decrement a counter with a limit between 0 and 10. The app provides a visually appealing interface with buttons to adjust the count and a reset functionality. Additionally, users can increment the counter using the space bar.
 
+![image](https://github.com/YawBoah/FANCY-COUNTER/assets/126890146/dbc24a8e-df4f-4e24-b494-5727bbe0af73)
+
+
 ## Features
 
 - **Increment and Decrement Count**: Adjust the count between 0 and 10 using buttons.
