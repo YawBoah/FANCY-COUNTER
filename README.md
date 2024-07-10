@@ -4,6 +4,7 @@ Fancy Counter is a React application that allows users to increment and decremen
 
 ![image](https://github.com/YawBoah/FANCY-COUNTER/assets/126890146/dbc24a8e-df4f-4e24-b494-5727bbe0af73)
 
+[Click to view the app](https://fcounter.netlify.app/)
 
 ## Features
 
